@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/Tuan6/Boostrap/css/bootstrap.min.css">
+    <script src="/Tuan6/Boostrap/js/jquery-3.7.1.min.js"></script>
+    <script src="/Tuab6/Boostrap/js/bootstrap.min.js"></script>
+    <style>
+        [class*=col-] {
+            padding: 0px;
+            margin: 0px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-bordered ">
+                    <thead>
+                        
+                            <th colspan="2">THÔNG TIN ĐĂNG NHẬP</th>
+                       
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>User name</td>
+                            <td id="ten">Your name</td>
+                        </tr>
+                        <tr>
+                            <td>password</td>
+                            <td id="pwd">Password</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("ten").innerHTML=localStorage.getItem("name");
+        document.getElementById("pwd").innerHTML=localStorage.getItem("pass")
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/Tuan6/Boostrap/css/bootstrap.min.css">
+    <script src="/Tuan6/Boostrap/js/jquery-3.7.1.min.js"></script>
+    <script src="/Tuan6/Boostrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <form action="">
+            <img src="../img/b1.jpg" alt="" id="anh" class="hinhAnh">
+            <button type="button" id="p" onclick="Play()">Play</button>
+            <button type="button" id="s" onclick="Stop()">Stop</button>
+        </form>
+    </div>
+</body>
+<script>
+    const img = [
+    "../img/b1.jpg",
+    "../img/b2.jpg",
+    "../img/b3.jpg",
+    "../img/b4.jpg",
+    "../img/b5.jpg",
+    "../img/b6.jpg",
+    "../img/b7.jpg",
+    "../img/b8.jpg",
+    "../img/b9.jpg",
+    "../img/b10.jpg",
+    ];
+    let time;
+    let i = 0;
+    function Play(){
+        let anh = document.getElementById("anh");
+        anh.setAttribute("src",img[i]);
+        i=i+1;
+        if(i>=img.length){
+            i=0;
+        }
+        time = setTimeout(Play,1000);
+        
+    }
+    function Stop(){
+        clearTimeout(time);
+    }
+    
+</script>
+</html>

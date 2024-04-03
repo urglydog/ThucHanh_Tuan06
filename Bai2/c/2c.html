@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="cfviewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/Tuan6/Boostrap/css/bootstrap.min.css">
+    <script src="/Tuan6/Boostrap/js/jquery-3.7.1.min.js"></script>
+    <script src="/Tuab6/Boostrap/js/bootstrap.min.js"></script>
+    <style>
+        [class*=col-] {
+            padding: 0px;
+            margin: 0px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <label for="">Chọn loại cafe:</label>
+        <br>
+        <input type="checkbox" name="cf" id="cf" value="Trung Nguyen">Trung Nguyen
+        <br>
+        <input type="checkbox" name="cf" id="cf" value="Me Kong">Me Kong
+        <br>
+        <input type="checkbox" name="cf" id="cf" value="New Life">New Life
+        <br>
+        <input type="checkbox" name="cf" id="cf" value="Ocean Blue">Ocean Blue
+        <br>
+        <input type="checkbox" name="cf" id="cf" value="Blue Space">Blue Space
+        <br>
+        <input type="checkbox" name="cf" id="cf" value="Window">Window
+        <br>
+        <button type="button"   onclick="In()">Chọn</button>
+        <br><br>
+        <label for="">Bạn chọn cafe:</label>
+        <label for="" id="banChon"></label>
+    </div>
+    <script>
+        function In(){
+            let arr = document.getElementsByName("cf");
+            let text = "";
+            for(let i =0;i<arr.length;i++){
+                if(arr[i].checked){
+                    text+=arr[i].value + "," + "\n";
+                }
+            }
+            document.getElementById("banChon").innerHTML = text;
+        }
+    </script>
+</body>
+
+</html>

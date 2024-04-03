@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="cfviewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/Tuan6/Boostrap/css/bootstrap.min.css">
+    <script src="/Tuan6/Boostrap/js/jquery-3.7.1.min.js"></script>
+    <script src="/Tuab6/Boostrap/js/bootstrap.min.js"></script>
+    <style>
+        [class*=col-] {
+            padding: 0px;
+            margin: 0px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <form action="">
+                    <table class="table">
+                        <thead>
+                            <th colspan="2" class="text-center ">FORM ĐỊNH DẠNG </th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>HỌ VÀ TÊN</td>
+                                <td>
+                                    <input type="text" name="name" id="name">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Chọn</td>
+                                <td>
+                                    <input type="radio" name="chon" id="chon" value="background">
+                                    <label for="">Background</label>
+                                    <input type="radio" name="chon" id="chon" value="font">
+                                    <label for="">Font</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="">Chọn màu</label>
+                                </td>
+
+                                <td>
+                                    <select name="chonMau" id="chonMau">
+                                        <option value="" disabled selected>Chọn màu...</option>
+                                        <option value="red">Đỏ</option>
+                                        <option value="green">Xanh lá cây</option>
+                                        <option value="blue">Xanh dương</option>
+                                        <option value="yellow">Vàng</option>
+                                        <option value="orange">Cam</option>
+                                        <option value="purple">Tím</option>
+                                        <option value="pink">Hồng</option>
+                                    </select>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <button type="button" onclick="abc()">Đổi màu</button>
+                                    <button type="button" onclick="huy()">Cancel</button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+                    <p class="text">
+                        you can direct link the hyperlink with the file if you know the address but this is limited by
+                        the
+                        browser. eg. if pdf reader is installed on the client then the pdf will not be downloaded
+                        instead it
+                        will be shown. A good solution would be to have a seperate page for downloading files. just pass
+                        filename in querystring and in the pageload event just outpit the file in response stream. This
+                        way you
+                        can use url say dwnld.aspx? filename.ext
+                    </p>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        function doimau() {
+            let mau = document.getElementById("chonMau").value;
+            let text = document.getElementsByClassName("text")[0];
+            text.style.color = mau;
+        }
+        function doiNen() {
+            let mau = document.getElementById("chonMau").value;
+            let text = document.getElementsByClassName("text")[0];
+            text.style.backgroundColor = mau;
+        }
+        function abc() {
+            let dinhDang = document.getElementsByName("chon");
+            for (let i = 0; i < dinhDang.length; i++) {
+                if (dinhDang[i].checked) {
+                    if (dinhDang[i].value === "font") {
+                        doimau();
+                    } else if (dinhDang[i].value === "background") {
+                        doiNen();
+                    }
+                }
+            }
+        }
+
+
+        function huy() {
+            let text = document.getElementsByClassName("text")[0];
+            text.style.color = "";
+            text.style.backgroundColor = "";
+        }
+    </script>
+</body>
+
+</html>

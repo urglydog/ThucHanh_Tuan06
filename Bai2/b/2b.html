@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/Tuan6/Boostrap/css/bootstrap.min.css">
+    <script src="/Tuan6/Boostrap/js/jquery-3.7.1.min.js"></script>
+    <script src="/Tuab6/Boostrap/js/bootstrap.min.js"></script>
+    <style>
+        [class*=col-] {
+            padding: 0px;
+            margin: 0px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <table class="table">
+                    <thead>
+                        <th colspan="2" class="text-center ">PHÉP TÍNH CƠ BẢN</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Nhập số thứ 1</td>
+                            <td>
+                                <input type="text" name="st1" id="st1" onblur="check()">
+                                <span id="err1">(*)</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Nhập số thứ 2</td>
+                            <td>
+                                <input type="text" name="st2" id="st2" onblur="check()">
+                                <span id="err2">(*)</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="button" onclick="Cong()">Cong</button>
+                                <button type="button" onclick="Tru()">Tru</button>
+                            </td>
+
+                            <td>
+                                <button type="button" onclick="Nhan()">Nhan</button>
+                                <button type="button" onclick="Chia()">Chia</button>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td><label for="">Kết quả </label></td>
+                            <td>
+                                <input type="text" id="kq" disabled>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        function check(){
+            let a = document.getElementById("st1").value;
+            let b = document.getElementById("st2").value;
+            if(a===""){
+                document.getElementById("err1").innerHTML="Không được để trống";
+            }
+            if(b===""){
+                document.getElementById("err2").innerHTML="Không được để trống";
+            }
+            if(!isNaN(a)){
+                document.getElementById("err1").innerHTML="Phải nhập số";
+            }
+            if(!isNaN(b)){
+                document.getElementById("err2").innerHTML="Phải nhập số";
+            }
+            if(!(a==="") && !(isNaN(a))){
+                document.getElementById("err1").innerHTML="(*)";
+            }
+            if(!(b==="") && !(isNaN(b))){
+                document.getElementById("err2").innerHTML="(*)";
+            }
+        }
+        function Cong(){
+            let a = document.getElementById("st1").value;
+            let b = document.getElementById("st2").value;
+            let kq = parseInt(a) + parseInt(b);
+            document.getElementById("kq").value = kq;
+        }
+        function Tru(){
+            let a = document.getElementById("st1").value;
+            let b = document.getElementById("st2").value;
+            let kq = parseInt(a) - parseInt(b);
+            document.getElementById("kq").value = kq;
+        }
+        function Nhan(){
+            let a = document.getElementById("st1").value;
+            let b = document.getElementById("st2").value;
+            let kq = parseInt(a) * parseInt(b);
+            document.getElementById("kq").value = kq;
+        }
+        function Chia(){
+            let a = document.getElementById("st1").value;
+            let b = document.getElementById("st2").value;
+            let kq = parseInt(a) / parseInt(b);
+            document.getElementById("kq").value = kq;
+        }
+    </script>
+</body>
+
+</html>

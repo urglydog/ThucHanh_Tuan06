@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/Tuan6/Boostrap/css/bootstrap.min.css">
+    <script src="/Tuan6/Boostrap/js/jquery-3.7.1.min.js"></script>
+    <script src="/Tuab6/Boostrap/js/bootstrap.min.js"></script>
+    <style>
+        [class*=col-] {
+            padding: 0px;
+            margin: 0px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-bordered ">
+                    <thead>
+                        
+                            <th colspan="2">THÔNG TIN ĐĂNG Kí</th>
+                       
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Họ tên</td>
+                            <td><input type="text" name="name" id="txtName"></td>
+                        </tr>
+                        <tr>
+                            <td>Mật khẩu</td>
+                            <td><input type="password" name="pass" id="txtPass"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><button type="button" onclick="dangky()">Nhập</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        function dangky() {
+            let ten, matkhau;
+            ten = document.getElementById("txtName").value;
+            matkhau = document.getElementById("txtPass").value;
+
+            localStorage.setItem("name", ten);
+            localStorage.setItem("pass", matkhau);
+            window.open("DangNhap.html");
+        }
+    </script>
+</body>
+</html>
